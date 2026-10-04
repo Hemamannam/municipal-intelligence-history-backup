@@ -1,0 +1,45 @@
+version: 2
+
+sources:
+  - name: clean
+    description: >
+      Normalized layer built by normalization/runner.py (Python: usaddress +
+      rule dictionaries). Raw payloads live one layer below in raw.*.
+    schema: clean
+    tables:
+      - name: complaints
+        description: 311 service requests, addresses normalized, coordinates validated.
+      - name: permits
+        description: >
+          DOB NOW approved permits. Source has no natural key and ~15%
+          duplicated rows; dup_rank marks them (rank 1 = keep).
+      - name: licenses
+        description: DCWP business licenses (NYC premises flagged via is_nyc_premises).
+      - name: pluto_lots
+        description: PLUTO tax lots — canonical BBL reference with unit counts.
+
+  - name: er
+    description: Entity-resolution outputs (entity_resolution/ package).
+    schema: er
+    tables:
+      - name: properties
+      - name: property_matches
+      - name: property_mentions
+      - name: review_queue
+      - name: owners
+      - name: map_property_owners
+      - name: businesses
+      - name: map_license_business
+      - name: map_complaints
+      - name: map_permits
+      - name: map_licenses
+      - name: owner_groups
+      - name: property_owner_group
+      - name: owner_group_evidence
+
+  - name: meta
+    schema: meta
+    tables:
+      - name: ingest_runs
+      - name: pipeline_runs
+      - name: rejected_records

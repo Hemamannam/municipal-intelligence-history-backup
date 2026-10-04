@@ -1,0 +1,85 @@
+version: 2
+
+models:
+  - name: dim_property
+    description: Canonical property dimension (one row per resolved property).
+    columns:
+      - name: property_id
+        tests: [unique, not_null]
+      - name: borough
+        tests:
+          - accepted_values:
+              values: [MANHATTAN, BRONX, BROOKLYN, QUEENS, STATEN ISLAND]
+      - name: latitude
+        tests:
+          - within_range:
+              arguments: {min_value: 40.4, max_value: 41.0}
+      - name: longitude
+        tests:
+          - within_range:
+              arguments: {min_value: -74.3, max_value: -73.6}
+      - name: units_res
+        tests:
+          - within_range:
+              arguments: {min_value: 0, max_value: 20000}
+
+  - name: dim_owner
+    columns:
+      - name: owner_id
+        tests: [unique, not_null]
+      - name: canonical_owner_name
+        tests: [not_null]
+
+  - name: dim_business
+    columns:
+      - name: business_id
+        tests: [unique, not_null]
+
+  - name: fct_complaints
+    description: Complaint fact (incremental on created_date).
+    columns:
+      - name: complaint_id
+        tests: [unique, not_null]
+      - name: created_date
+        tests:
+          - not_null
+          - not_in_future
+      - name: property_id
+        tests:
+          - relationships:
+              to: ref('dim_property')
+              field: property_id
+
+  - name: bridge_property_source
+    description: Record-level lineage (source record → canonical property).
+    columns:
+      - name: property_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_property')
+              field: property_id
+      - name: match_method
+        tests:
+          - accepted_values:
+              values: [bbl_exact, bbl_standalone, address_exact, fuzzy_address, standalone]
+
+  - name: mart_landlord_performance
+    description: Owner rollup + operational risk score (prioritization only).
+    columns:
+      - name: owner_id
+        tests: [unique, not_null]
+      - name: operational_risk_score
+        tests:
+          - within_range:
+              arguments: {min_value: 0, max_value: 100}
+
+  - name: mart_property_risk
+    columns:
+      - name: property_id
+        tests: [unique, not_null]
+
+  - name: mart_neighborhood_operations
+    columns:
+      - name: zipcode
+        tests: [not_null]

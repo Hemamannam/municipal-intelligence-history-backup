@@ -1,0 +1,46 @@
+name_a,name_b,is_org,label,note
+207 SHERMAN ASSOCIATES,207 SHERMAN ASSOCIATES LLC,1,match,real pair; legal-form suffix dropped
+BROOKFIELD PROPERTIES OP BY CBRE,BROOKFIELD PROPERTIES OPERATED BY CBRE,1,match,real pair; abbreviation of OPERATED
+WELLS FARGO BANK N A,WELLS FARGO BANK NA,1,match,real pair; N.A. spacing variant
+125 RIVERSIDE ASSOCIATES LLC,125 RIVERSIDE ASSOCIATES,1,match,suffix dropped
+GREENPOINT MANAGEMENT LLC,GREENPONT MANAGEMENT LLC,1,match,single-character misspelling
+TF CORNERSTONE INC,T F CORNERSTONE INC,1,match,initials spacing variant
+DOUGLAS ELLIMAN PROPERTY MANAGEMENT,DOUGLASS ELLIMAN PROPERTY MANAGEMENT,1,match,misspelling of DOUGLAS
+THE MOINIAN GROUP,MOINIAN GROUP,1,match,leading THE dropped
+MHANY 2002 HOUSING DEVELOPMENT FUND,MHANY MOTHER GASTON HOUSING DEVELOPMENT FUND CORP,1,nonmatch,real pair; sibling HDFC entities under one sponsor
+OLR ECW HOUSING DEVELOPMENT FUND CO INC,OLR MM HOUSING DEVELOPMENT FUND CO INC,1,nonmatch,real pair; sibling HDFC entities
+5 DE MAYO FOOD MARKET 2 CORP,5 DE MAYO FOOD MARKET CORP,1,nonmatch,real pair; numbered sister corporation
+USA MOTORS AUTO GROUP INC,USA MOTORS INC,1,nonmatch,real pair; ambiguous - conservative label
+4 BROTHERS CONSTRUCTION USA CORP,4 CONSTRUCTION CORP,1,nonmatch,real pair; token-subset false positive
+GLOBAL ARCH DESIGN BUILD INC,GLOBAL DESIGN 1 INC,1,nonmatch,real pair; different firms
+UNITED NYC CONSTRUCTION CORP,UNITED STAR CONSTRUCTION AND REMODELING CORP,1,nonmatch,real pair; different firms
+MIJU SEWING USA CORP,MIJU USA CORP,1,nonmatch,real pair; ambiguous - conservative label
+191 CHRYSTIE LLC,191 Y LLC,1,nonmatch,real review-queue pair
+ARVERNE COMMUNITY CENTER CORP,ARVERNE COMMUNITY CENTER GROUP,1,nonmatch,real pair; ambiguous corp vs group
+B C D E REALTY CORP,B I H REALTY CORP,1,nonmatch,real review-queue pair
+CRESTON AVE HOUSING DEVELOPMENT FUND COR P,CRESTON HEIGHTS HOUSING DEVELOPMENT FUND CORP,1,nonmatch,real pair; different HDFCs on same street
+JTJ VENTURES 432 LLC,JTJ VENTURES LLC SERIES 523,1,nonmatch,real pair; per-building LLC family
+NOSTRAND TWO LLC,NOSTRAND VIEW LLC,1,nonmatch,real review-queue pair
+PARKASH 2165 LLC,PARKASH 2454 LLC,1,nonmatch,real pair; per-building LLCs of one portfolio (the Phase-17 problem)
+SUNSET 63 LLC,SUNSET REALTY ASSOCIATES LLC,1,nonmatch,real review-queue pair
+TOWNHOUSE 123 LLC,TOWNHOUSE RENTAL V LLC,1,nonmatch,real review-queue pair
+WING HANG LLC,WING SHENG LLC,1,nonmatch,real review-queue pair
+ACME PROPERTIES LLC,ACME PROPERTIES OF NEW YORK LLC,1,nonmatch,related but distinct legal entities
+KINGS HIGHWAY REALTY LLC,KINGS HWY REALTY LLC,1,match,suffix abbreviation inside name
+FIRST CHURCH OF GOD IN CHRIST,FIRST CHURCH OF GOD,1,nonmatch,parent vs congregation ambiguity
+NYC HOUSING AUTHORITY,NEW YORK CITY HOUSING AUTHORITY,1,match,same public agency
+PATRICK BRYANT,PATRICK G BRYANT,0,match,real pair; middle initial added
+LUIS DIAZ,LUIS M DIAZ,0,match,real pair; middle initial added
+JOSE R RODRIGUEZ,JOSE RODRIGUEZ,0,match,middle initial dropped
+ANGEL,ANGEL CHU,0,nonmatch,real pair; bare first name token subset
+ANGEL,ANGEL MORENO AND JEANETTE RAMOS FAMILY T RUST,0,nonmatch,real pair; token subset false positive
+BENJAMIN BENJAMIN,BENJAMIN REDDY,0,nonmatch,real pair; repeated-token dedup false positive
+LI HE DONG,LI LI,0,nonmatch,real pair; token dedup false positive
+GAR HUNG,GAR JIN HUNG,0,nonmatch,real pair; ambiguous - conservative label
+SURINDER PAL SINGH,SURINDER SINGH,0,nonmatch,real pair; very common surname - conservative label
+UDDIN MOHAMMAD,UDDIN MOHAMMAD ALA,0,nonmatch,real pair; ambiguous - conservative label
+ALEXANDER DELGADO,ALEXANDER XU,0,nonmatch,real review-queue pair
+ALEXANDER J PSYLLOS,ALEXANDER MA MA,0,nonmatch,real review-queue pair
+MOHAMMED RAHMAN,MOHAMMED RAHMAN,0,match,identical after normalization
+JOHN SHEN,SHEN JOHN,0,match,order swapped only
+MARIA GONZALEZ,MARIO GONZALEZ,0,nonmatch,different first names one edit apart

@@ -1,0 +1,7 @@
+municipal_intelligence:
+  target: local
+  outputs:
+    local:
+      type: duckdb
+      path: "{{ env_var('MIP_DUCKDB_PATH', '../data/warehouse/mip.duckdb') }}"
+      threads: 4

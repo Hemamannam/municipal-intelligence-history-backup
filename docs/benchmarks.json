@@ -1,0 +1,36 @@
+[
+  {
+    "label": "full-sample",
+    "measured_at": "2026-08-10T17:26:44+00:00",
+    "raw_row_counts": {
+      "nyc_311": 1868712,
+      "dob_permits": 173679,
+      "dca_licenses": 69884,
+      "pluto": 858602
+    },
+    "total_raw_rows": 2970877,
+    "ingest_throughput_rows_per_s": {
+      "dca_licenses": 9511.8,
+      "dob_permits": 3554.8,
+      "pluto": 6251.8,
+      "nyc_311": 59.1,
+      "hpd_registrations": 5632.4,
+      "hpd_contacts": 9574.3
+    },
+    "stages": {
+      "normalize_s": 185.65,
+      "er_properties_s": 12.06,
+      "er_owners_s": 16.27,
+      "er_businesses_s": 4.09,
+      "er_portfolios_s": 3.67,
+      "dbt_run_s": 4.48,
+      "dbt_test_s": 1.76,
+      "pipeline_total_s": 227.98
+    },
+    "er_blocking": {
+      "comparisons": 998330,
+      "naive_comparisons": 26505902342,
+      "reduction_pct": 99.9962
+    }
+  }
+]
